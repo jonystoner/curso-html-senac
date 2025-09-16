@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formularios</title>
+</head>
+
+<body>
+    <h1> trabalhando com formularios </h1>
+    <p>elementos de formularios são voltados para a interação do usuário, entada de dados seleção de opções
+        processamento para a manipulação de dados entreoutros </p>
+    <p> para que um fornulario funcione é necessario combinalo com uma <strong> limguagem de programação </strong> </p>
+
+    <form action="" method="post" name="">
+        <p>
+            <label for="nome">Informe seu Nome </label>
+            <input type="text" id="nome" name="nome" required>
+        </p>
+        <p>
+            <label for="email">Informe seu E-mail </label>
+            <input type="email" id="email" name="email">
+        </p>
+        <p>
+            <label for="celular"> Celular</label>
+            <input type="tel" id="celular" name="celular" placeholder="(00) 0000-0000">
+        </p>
+        <p>
+            é maior de idade:
+        </p>
+        <p>
+            <input type="radio" id="sim" name="escolha">
+            <label for="sim">SIM</label>
+            <input type="radio" id="nao" name="escolha">
+            <label for="nao">Não</label>
+        </p>
+        <hr>
+        <p>Interresses:</p>
+        <p>
+            <input type="checkbox" id="html" name="Interresses">
+            <label for="html"> html</label>
+
+        </p>
+        <p>
+            <input type="checkbox" id="css" name="Interresses">
+            <label for="css"> css</label>
+
+        </p>
+        <p>
+            <input type="checkbox" id="js" name="Interresses">
+            <label for="js">Java Script</label>
+
+        </p>
+
+        <p>
+            <label for="nascimento"> data nacimento</label>
+            <input type="date" id="nascimento" name="nascimento">
+        </p>
+        <p>
+            <label for="nascimento"> data nacimento</label>
+            <input type="datetime" id="nascimento" name="nascimento">
+        </p>
+        <p>
+            <label for="nascimento"> data nacimento</label>
+            <input type="datetime-local" id="nascimento" name="nascimento">
+        </p>
+        <p>
+            <label for="cor"> qual sua cor favorita </label>
+            <input type="color" id="cor" name="cor">
+        </p>
+        <p>
+            <label for="age"> qual sua idade </label>
+            <input type="number" id="age" name="age">
+        </p>
+        <p>
+            <label for="age"> qual sua idade </label>
+            <input type="month" id="age" name="age">
+        </p>
+
+        <p>
+            <label> Assunto:</label>
+            <select name="assunto" id="assunto"> 
+                <option value=""> Escolha uma opção </option> 
+                <option value="elogio">Elogios  </option>
+                <option value="reclamacao">Reclamações  </option>
+                <option value="outros">outros  </option> 
+            </select>
+        </p>
+        <p>
+            <label for="mensagem"> Memsagem</label>
+            <textarea name="mensagem" id="mensagem" cols="40" rows="20"></textarea>
+        </p>
+        <button id="" onclick=""> Enviar</button>
+    </form>
+</body>
+</html>
