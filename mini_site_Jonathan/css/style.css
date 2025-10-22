@@ -1,0 +1,55 @@
+  body {
+      margin: 0;
+      background-color: rgb(59, 29, 88);
+  }
+
+  header {
+      width: 100%;
+      background-color: rgb(253, 184, 39);
+
+  }
+
+  h1 {
+      margin: 0;
+      text-align: center;
+      color: rgb(255, 255, 255);
+  }
+
+  .div {
+      display: flex;
+      align-items: center;
+  }
+
+
+  a,p {
+      text-align: center;
+  }
+
+  img {
+
+      width: 50%;
+  }
+
+  main {
+      margin: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+      background-color: aliceblue;
+  }
+
+
+
+  @media only screen and (max-width:325px) {
+      body {
+          background-color: rgb(0, 0, 0);
+      }
+  }
+
+
+  @media only screen and (max-width:320px) {
+      img {
+
+          width: 75%;
+      }
+  }
