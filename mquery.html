@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@media</title>
+    <style>
+        /*mobile first*/
+        body {
+            background-color: burlywood;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .tudo {
+            background-color: black;
+            width: 500px;
+            list-style: none;
+        }
+
+        .menuitem {
+            background-color: white;
+
+        }
+
+
+        /* esse min-width vai pegar tudo pra cima dele ou seja qualquer cosa acima de 325px ele muda casos 
+            seja min-width peg para baixo
+        */
+        @media only screen and (min-width:325px) {
+            body {
+                background-color: rgb(0, 0, 0);
+            }
+        }
+
+        @media only screen and (min-width: 768px) {
+            body {
+                background-color: chocolate;
+            }
+
+            #menulist,
+            .topnav {
+                display: flex;
+
+            }
+        }
+
+        @media only screen and (min-width:1024px) {
+            body {
+                background-color: green;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>@media</h1>
+        <p>
+            Regra introduzida em css3, possibilitou definir regras de estilo diferentes para diferentes tipos de midia
+        </p>
+        <p> As conssultas de nidia podem ser usadas para verificar muitas coisas como </p>
+        <ul>
+            <li> largura e altura da viewport </li>
+            <li>orientação da viweport (paifsagem retratto)</li>
+            <li>resolução</li>
+        </ul>
+        <p>Usando consultas de midia são uma técnica popular para oferecer estilo personalizado filha para desktops,
+            tablests e smartphones</p>
+        <p>Exemplo:</p>
+        <div class="tudo">
+            <div class="list">
+                <ul id="menulist">
+                    <li class="menuitem">
+                        conteudo 1
+                    </li>
+                    <li class="menuitem">
+                        conteudo 2
+                    </li>
+                    <li class="menuitem">
+                        conteudo 3
+                    </li>
+                    <li class="menuitem">
+                        conteudo 4
+                    </li>
+                    <li class="menuitem">
+                        conteudo 5
+                    </li>
+                </ul>
+            </div>
+            <div id="texto">
+                <h1>conteudo de quebras</h1>
+                <p>quando determinamos as medidas em pixel de paginas, estamos falando dos chamados breakpoints</p>
+            </div>
+
+        </div>
+        <p>
+            Menu
+        </p>
+        <div class="topnav">
+            <p><a href="#">
+                    HOME
+                </a></p>
+            <p><a href="#">
+                    MENU
+                </a></p>
+            <p><a href="#">
+                    CONTATO
+                </a></p>
+        </div>
+    </main>
+</body>
+
+</html>

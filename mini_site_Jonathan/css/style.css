@@ -1,55 +1,184 @@
-  body {
-      margin: 0;
-      background-color: rgb(59, 29, 88);
-  }
-
-  header {
-      width: 100%;
-      background-color: rgb(253, 184, 39);
-
-  }
-
-  h1 {
-      margin: 0;
-      text-align: center;
-      color: rgb(255, 255, 255);
-  }
-
-  .div {
-      display: flex;
-      align-items: center;
-  }
+body {
+    margin: 0;
+    background-color: rgb(59, 29, 88);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+ 
+}
 
 
-  a,p {
-      text-align: center;
-  }
-
-  img {
-
-      width: 50%;
-  }
-
-  main {
-      margin: 30px;
-      display: flex;
-      justify-content: center;
-      gap: 5px;
-      background-color: aliceblue;
-  }
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: rgb(253, 184, 39);
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
 
 
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    border-radius: 15px;
+}
 
-  @media only screen and (max-width:325px) {
-      body {
-          background-color: rgb(0, 0, 0);
-      }
-  }
+
+a {
+    text-decoration: none;
+    color: rgb(59, 29, 88);
+    font-size: 1rem;
+    font-weight: 500;
+    transition: 0.3s;
+}
 
 
-  @media only screen and (max-width:320px) {
-      img {
+h1 {
+    margin: 0;
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+}
 
-          width: 75%;
-      }
-  }
+
+.div {
+    display: flex;
+    align-items: center;
+}
+
+p {
+    text-align: center;
+    color: rgb(59, 29, 88);
+    font-size: 1.1rem;
+}
+
+main {
+    flex: 1;
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    background-color: aliceblue;
+    padding: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.team-section {
+    margin-bottom: 40px;
+}
+
+.team-section h2 {
+    color: rgb(253, 184, 39);
+    margin-bottom: 20px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.player-card {
+    background-color: white;
+    color: rgb(59, 29, 88);
+    border-radius: 15px;
+    width: 220px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.player-card img {
+  width: 100%;
+  border-radius: 10px;
+  height: 220px;
+}
+
+footer {
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 15px;
+    color: rgb(59, 29, 88);
+    font-weight: 500;
+}
+
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    main {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+}
+
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    a {
+        font-size: 1rem;
+    }
+
+    main {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 320px) {
+    body {
+        background-color: rgb(0, 0, 0);
+    }
+
+    header,
+    main,
+    footer {
+        width: 100%;
+        text-align: center;
+    }
+
+    a {
+        color: white;
+    }
+
+    main {
+        background-color: rgb(59, 29, 88);
+        color: white;
+    }
+}
