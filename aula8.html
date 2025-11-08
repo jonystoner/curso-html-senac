@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8" />
     <title>Aula 5 - Introdução ao DOM</title>
@@ -14,9 +15,10 @@
         }
     </style>
 </head>
+
 <body>
     <h1 id="titulo-principal">Olá, Mundo!</h1>
-    
+
     <p class="paragrafo">Este é o primeiro parágrafo.</p>
     <p class="paragrafo">Este é o segundo parágrafo.</p>
     <img class="imgComImagem"></img>
@@ -34,329 +36,396 @@
 </body>
 
 <script>
-//------------------------------------------------------------
-// O que é o DOM?
-// DOM significa "Document Object Model" (Modelo de Objeto do Documento).
-// É a representação do seu arquivo HTML como um "objeto" JavaScript, criado automaticamente pelo navegador.
-// Pense no DOM como uma árvore de elementos, onde cada elemento é chamado de nó (node):
-// <html>
-//  ├── <head>
-//  │   └── <title>
-//  └── <body>
-//      ├── <h1>
-//      └── <p>
-// O JavaScript usa o 'document' para acessar e manipular essa árvore.
+    //------------------------------------------------------------
+    // O que é o DOM?
+    // DOM significa "Document Object Model" (Modelo de Objeto do Documento).
+    // É a representação do seu arquivo HTML como um "objeto" JavaScript, criado automaticamente pelo navegador.
+    // Pense no DOM como uma árvore de elementos, onde cada elemento é chamado de nó (node):
+    // <html>
+    //  ├── <head>
+    //  │   └── <title>
+    //  └── <body>
+    //      ├── <h1>
+    //      └── <p>
+    // O JavaScript usa o 'document' para acessar e manipular essa árvore.
 
 
-//------------------------------------------------------------
-// Selecionando Elementos 
-// Antes de manipular um elemento, precisamos "seleciona-lo" no JS.
+    //------------------------------------------------------------
+    // Selecionando Elementos 
+    // Antes de manipular um elemento, precisamos "seleciona-lo" no JS.
 
-// 1. document.getElementById(id)
-// O método mais rápido e antigo. Pega um elemento pelo seu 'id' único.
-// let titulo = document.getElementById("titulo-principal");
-// console.log(titulo);
+    // 1. document.getElementById(id)
+    // O método mais rápido e antigo. Pega um elemento pelo seu 'id' único.
+    // let titulo = document.getElementById("titulo-principal");
+    // console.log(titulo);
 
-// Forma Antga 
+    // Forma Antga 
 
-let letTituloPrincipal = document.getElementById('campo-nome')
+    let letTituloPrincipal = document.getElementById('campo-nome')
 
-console.log(letTituloPrincipal)
+    console.log(letTituloPrincipal)
 
-// 2. document.querySelector(seletorCSS)
-// O método mais moderno e flexível. Pega o PRIMEIRO elemento que
-// bater com um seletor de CSS.
-// Pode ser por id ('#id'), por classe ('.classe') ou por tag ('tag').
+    // 2. document.querySelector(seletorCSS)
+    // O método mais moderno e flexível. Pega o PRIMEIRO elemento que
+    // bater com um seletor de CSS.
+    // Pode ser por id ('#id'), por classe ('.classe') ou por tag ('tag').
 
-let valor = document.querySelectorAll('.paragrafo')
+    let valor = document.querySelectorAll('.paragrafo')
 
-console.log(valor)
+    console.log(valor)
 
-let divs = document.querySelector('div')
+    let divs = document.querySelector('div')
 
-console.log(divs)
+    console.log(divs)
 
-// Pegando pelo ID (igual ao getElementById)
-// let tituloDeNovo = document.querySelector("#titulo-principal");
-// console.log(tituloDeNovo);
+    // Pegando pelo ID (igual ao getElementById)
+    // let tituloDeNovo = document.querySelector("#titulo-principal");
+    // console.log(tituloDeNovo);
 
-// Pegando pela CLASSE (pega SÓ O PRIMEIRO que achar)
-// let primeiroParagrafo = document.querySelector(".paragrafo");
-// console.log(primeiroParagrafo);
+    // Pegando pela CLASSE (pega SÓ O PRIMEIRO que achar)
+    // let primeiroParagrafo = document.querySelector(".paragrafo");
+    // console.log(primeiroParagrafo);
 
-// Pegando pela TAG
-// let botao = document.querySelector("button");
-// console.log(botao);
+    // Pegando pela TAG
+    // let botao = document.querySelector("button");
+    // console.log(botao);
 
 
-// 3. document.querySelectorAll(seletorCSS)
-// Pega TODOS os elementos que baterem com o seletor.
-// Retorna uma lista de nós (chamada NodeList), que é parecida com um Array.
-// let todosOsParagrafos = document.querySelectorAll(".paragrafo");
-// console.log(todosOsParagrafos);
-// console.log("Texto do segundo parágrafo: " + todosOsParagrafos[1].textContent);
+    // 3. document.querySelectorAll(seletorCSS)
+    // Pega TODOS os elementos que baterem com o seletor.
+    // Retorna uma lista de nós (chamada NodeList), que é parecida com um Array.
+    // let todosOsParagrafos = document.querySelectorAll(".paragrafo");
+    // console.log(todosOsParagrafos);
+    // console.log("Texto do segundo parágrafo: " + todosOsParagrafos[1].textContent);
 
 
-//desafios
+    //desafios
 
-// 1. Capture o elemento <input> que tem o id "campo-nome"
-//    e guarde-o numa variável 'campoNome'. Mostre no console.
+    // 1. Capture o elemento <input> que tem o id "campo-nome"
+    //    e guarde-o numa variável 'campoNome'. Mostre no console.
 
-let campoNomes = document.querySelector('#campo-nome')
+    let campoNomes = document.querySelector('#campo-nome')
 
-campoNomes.addEventListener('input', function(){
-    let valorDigitado = campoNomes.value
+    campoNomes.addEventListener('input', function () {
+        let valorDigitado = campoNomes.value
 
-   console.log(valorDigitado) 
-})
+        console.log(valorDigitado)
+    })
 
-console.log(campoNomes)
+    console.log(campoNomes)
 
-// 2. Capture o botão que tem o id "botao-clique" usando querySelector
-//    e guarde-o numa variável 'botao'. Mostre no console.
+    // 2. Capture o botão que tem o id "botao-clique" usando querySelector
+    //    e guarde-o numa variável 'botao'. Mostre no console.
 
-let botao = document.querySelector('#botao-clique')
+    let botao = document.querySelector('#botao-clique')
 
-console.log(botao)
+    console.log(botao)
 
 
 
-//------------------------------------------------------------
-// Lendo e Alterando Conteúdo
+    //------------------------------------------------------------
+    // Lendo e Alterando Conteúdo
 
-// 1. .textContent
-// Pega ou define o TEXTO puro de um elemento (ignora tags HTML).
-let tituloPrincipal  = document.querySelector("#campo-nome");
+    // 1. .textContent
+    // Pega ou define o TEXTO puro de um elemento (ignora tags HTML).
+    let tituloPrincipal = document.querySelector("#titulo-principal");
 
-console.log("Texto atual: " + tituloPrincipal.textContent); // Lendo
+    //console.log("Texto atual: " + tituloPrincipal.textContent); // Lendo
 
 
 
-// tituloPrincipal .textContent = "DOM é incrível!"; // Definindo/Alterando
-// console.log("Texto novo: " + tituloPrincipal.textContent);
+    // tituloPrincipal .textContent = "DOM é incrível!"; // Definindo/Alterando
+    // console.log("Texto novo: " + tituloPrincipal.textContent);
 
 
-// 2. .innerHTML
-// Pega ou define o conteúdo HTML de um elemento.
-// (Cuidado! Usar para definir pode ser arriscado se o texto vier do usuário)
-// let primeiroParagrafoEl = document.querySelector(".paragrafo");
-// primeiroParagrafoEl.innerHTML = "Este texto tem <strong>negrito</strong>!";
+    let aula8 = tituloPrincipal.textContent = "Dom é incrivel"
 
 
-// 3. .value
-// Usado especificamente para ler ou definir o valor de campos de formulário
-// (como <input>, <textarea>, <select>).
-// let inputNome = document.querySelector("#campo-nome");
-// console.log("Valor do input: " + inputNome.value); // Lendo (provavelmente vazio)
+    console.log("Texto atual: " + aula8)
 
-// inputNome.value = "Valor definido pelo JS"; // Definindo
+    // 2. .innerHTML
+    // Pega ou define o conteúdo HTML de um elemento.
+    // (Cuidado! Usar para definir pode ser arriscado se o texto vier do usuário)
+    // let primeiroParagrafoEl = document.querySelector(".paragrafo");
+    // primeiroParagrafoEl.innerHTML = "Este texto tem <strong>negrito</strong>!";
 
-// 4. .setAttribute
-// Usado para inserir um atributo a um elemento HTML
-// exemplo: 
-// let elementoImg = document.querySelector("img.imgComImagem")
-//elementoImg.setAttribute('src', '/images.png'); // aqui atribuimos uma imagem a uma div
-//desafios
 
-// 5. Propriedade direta
-// Usado para inserir de forma mais direta uma valor em uma propriedade de um elemento
-// e feito da seguinte forma: elemento.propriedade = valor;
-// vamos usar o objeto modificado como exemplo:
-// elementoImg.src = 'images2.jpg';
+    // 3. .value
+    // Usado especificamente para ler ou definir o valor de campos de formulário
+    // (como <input>, <textarea>, <select>).
+    // let inputNome = document.querySelector("#campo-nome");
+    // console.log("Valor do input: " + inputNome.value); // Lendo (provavelmente vazio)
 
-// 1. Capture o primeiro parágrafo (classe "paragrafo").
-//    Altere o .textContent dele para "Conteúdo alterado no desafio!".
+    let mudardados = document.querySelector('#campo-nome')
 
+    mudardados.value = 'jonathan viana'
 
-// 2. Capture o <input> (id "campo-nome").
-//    Defina o .value dele para o seu nome.
+    // inputNome.value = "Valor definido pelo JS"; // Definindo
 
-// 3. Adicione uma imagem a um elemento 'img' utilizando .setAttribute
-// (não pode ser o elemento 'img' com a classe 'imgComImagem' pegue outro)
+    // 4. .setAttribute
+    // Usado para inserir um atributo a um elemento HTML
+    // exemplo: 
+    // let elementoImg = document.querySelector("img.imgComImagem")
+    //elementoImg.setAttribute('src', '/images.png'); // aqui atribuimos uma imagem a uma div
+    //desafios
 
+    let elementoImg = document.querySelector("img.imgComImagem")
+    elementoImg.setAttribute('src', '/img/basebol.png')
 
-// 4. mude essa imagem por outra utilizando o metodo da propriedade
-// direta
+    // 5. Propriedade direta
+    // Usado para inserir de forma mais direta uma valor em uma propriedade de um elemento
+    // e feito da seguinte forma: elemento.propriedade = valor;
+    // vamos usar o objeto modificado como exemplo:
+    // elementoImg.src = 'images2.jpg';
 
-//------------------------------------------------------------
-// Alterando Estilos (CSS com JS)
-// Podemos alterar o CSS "inline" de um elemento usando .style
-// PS: Propriedades com hífen (como 'background-color') viram "camelCase" (backgroundColor)
+    elementoImg.src = 'img/chapeleiro.jpg'
 
-// let tituloPrincipal  = document.querySelector("#titulo-principal");
+    // 1. Capture o primeiro parágrafo (classe "paragrafo").
+    //    Altere o .textContent dele para "Conteúdo alterado no desafio!".
 
-// Alterando a cor
-// tituloPrincipal.style.color = "red";
+    let capture = document.querySelector('.paragrafo')
 
-// Alterando o tamanho da fonte
-// tituloPrincipal.style.fontSize = "40px";
+    capture.textContent = 'Conteúdo alterado no desafio!';
 
-// Alterando o fundo
-// tituloPrincipal.style.backgroundColor = "lightgray";
+    console.log(capture)
+    // 2. Capture o <input> (id "campo-nome").
+    //    Defina o .value dele para o seu nome.
 
+    let inputNome = document.querySelector("#campo-nome");
+    console.log("Valor do input: " + inputNome.value);
 
-//desafios
+    // 3. Adicione uma imagem a um elemento 'img' utilizando .setAttribute
+    // (não pode ser o elemento 'img' com a classe 'imgComImagem' pegue outro)
 
-// 1. Capture o segundo parágrafo.
-//    Altere a cor dele para "green".
 
+    // 4. mude essa imagem por outra utilizando o metodo da propriedade
+    // direta
 
-// 2. Capture o botão (id "botao-clique").
-//    Altere a cor de fundo dele (.style.backgroundColor) para "blue"
-//    e a cor do texto para "white".
+    //------------------------------------------------------------
+    // Alterando Estilos (CSS com JS)
+    // Podemos alterar o CSS "inline" de um elemento usando .style
+    // PS: Propriedades com hífen (como 'background-color') viram "camelCase" (backgroundColor)
 
 
-//------------------------------------------------------------
-// Alterando Classes (O Jeito Moderno)
-// Em vez de alterar o .style, é muito melhor no longo prazo do 
-// projeto adicionar ou remover
-// classes de CSS. Nós usamos a propriedade .classList
+    let tituloPrincipall = document.querySelector("#titulo-principal");
 
-// let tituloPrincipal  = document.querySelector("#titulo-principal");
+    // Alterando a cor
+    tituloPrincipall.style.color = "red";
 
-// .classList.add(nomeDaClasse)
-// Adiciona a classe (veja a classe .destaque no <style> lá em cima)
-// tituloPrincipal.classList.add("destaque");
+    // Alterando o tamanho da fonte
+    // tituloPrincipal.style.fontSize = "40px";
 
-// .classList.remove(nomeDaClasse)
-// Remove a classe
-// tituloPrincipal.classList.remove("destaque");
+    // Alterando o fundo
+    // tituloPrincipal.style.backgroundColor = "lightgray";
 
-// .classList.toggle(nomeDaClasse)
-// "Interruptor": Adiciona se não tiver, remove se já tiver.
-// É ótimo para botões!
 
-// tituloPrincipal.classList.toggle("destaque"); // Adiciona
-// tituloPrincipal.classList.toggle("destaque"); // Remove
+    //desafios
 
+    // 1. Capture o segundo parágrafo.
+    //    Altere a cor dele para "green".
 
-//desafios
 
-// 1. Capture o primeiro parágrafo.
-//    Adicione a classe "texto-azul" (que já existe no <style>) a ele.
+    //let segundoParagrafo = document.querySelector('.paragrafo');
 
+    // Alterando a cor
+    //segundoParagrafo.style.color = "green";
 
-// 2. Capture o segundo parágrafo.
-//    Adicione a classe "destaque" a ele.
+    // 2. Capture o botão (id "botao-clique").
+    //    Altere a cor de fundo dele (.style.backgroundColor) para "blue"
+    //    e a cor do texto para "white".
 
 
-//3. Remova a classe tanto do primeiro paragrafo como do segundo
-//   utilizando .remove
 
+    //------------------------------------------------------------
+    // Alterando Classes (O Jeito Moderno)
+    // Em vez de alterar o .style, é muito melhor no longo prazo do 
+    // projeto adicionar ou remover
+    // classes de CSS. Nós usamos a propriedade .classList
 
-//------------------------------------------------------------
-// Eventos (Interação)
-// Eventos são ações que o usuário faz (clicar, passar o mouse, digitar).
-// Podemos "ouvir" (listen) a esses eventos e rodar uma função (callback)
-// como consequencia do evento.
+    let tituloPrincipal3 = document.querySelector("#titulo-principal");
 
-// A ferramenta principal é o .addEventListener(tipoDoEvento, funcaoCallback)
+    tituloPrincipal3.classList.add('destaque')
+    // Adiciona a classe (veja a classe .destaque no <style> lá em cima)
+    // tituloPrincipal.classList.add("destaque");
 
-// Exemplo:
-// 1. Selecionamos o elemento
-// let botaoEl = document.querySelector("#botao-clique");
+    // .classList.remove(nomeDaClasse)
 
-// 2. Criamos a função que vai rodar no evento
-// function quandoClicar() {
-//   alert("Você clicou!");
-// }
 
+    // Remove a classe
+    // tituloPrincipal.classList.remove("destaque");
 
-// 3. Adicionamos o "ouvinte"
-// botaoEl.addEventListener("click", quandoClicar);
+    // .classList.toggle(nomeDaClasse)
+    // "Interruptor": Adiciona se não tiver, remove se já tiver.
+    // É ótimo para botões!
 
+    tituloPrincipal3.classList.toggle("destaque"); // Adiciona
+    tituloPrincipal3.classList.toggle("destaque"); // Remove
 
-// Também podemos usar uma Arrow Function direto:
-// botaoEl.addEventListener("click", () => {
-//   console.log("Clicou de novo!");
-//   document.querySelector("#titulo-principal").classList.toggle("destaque");
-// });
 
+    //desafios
 
-//desafios
+    // 1. Capture o primeiro parágrafo.
+    //    Adicione a classe "texto-azul" (que já existe no <style>) a ele.
 
-// Desafio Final (Juntando tudo)
-// 1. Capture o botão (id "botao-clique") e o input (id "campo-nome").
-// 2. Capture o título (id "titulo-principal").
-// 3. Adicione um "addEventListener" de "click" ao *botão*.
-// 4. Dentro da função do addEventListener:
-//    a. Pegue o .value do *input*.
-//    b. Coloque esse valor como o .textContent do *título*.
+    let paragrafo1 = document.querySelector(".paragrafo")
 
-// Exemplo: Se o usuário digitar "Carlos" no input e clicar,
-// o <h1> deve mudar para "Carlos".
 
-// Escreva seu código aqui:
+    paragrafo1.classList.toggle("texto-azul");
 
 
-//------------------------------------------------------------
-// Criando e Removendo Elementos
-// Podemos criar elementos HTML do zero e adicioná-los à página,
-// ou remover elementos que já existem.
+    // 2. Capture o segundo parágrafo.
+    //    Adicione a classe "destaque" a ele.
+    let paragrafo5 = document.querySelector(".paragrafo")
 
-// 1. document.createElement(tag)
-// Cria um novo elemento (em memória, que ainda não está na página).
+    paragrafo5.classList.toggle("destaque");
 
 
-// let novoItemLista = document.createElement("li");
+    //3. Remova a classe tanto do primeiro paragrafo como do segundo
+    //   utilizando .remove
 
+    paragrafo5.classList.toggle("destaque");
+    paragrafo5.classList.toggle("texto-azul");
 
-// 2. elementoPai.appendChild(elementoFilho)
-// Insere o novo elemento (filho) dentro de um elemento existente (pai).
-// Primeiro, selecionamos o "pai" (a lista <ul>):
-// let listaPai = document.querySelector("#lista-desafio");
+    //------------------------------------------------------------
+    // Eventos (Interação)
+    // Eventos são ações que o usuário faz (clicar, passar o mouse, digitar).
+    // Podemos "ouvir" (listen) a esses eventos e rodar uma função (callback)
+    // como consequencia do evento.
 
-// Agora, "anexamos" o novo <li> dentro do <ul>
-// listaPai.appendChild(novoItemLista);
+    // A ferramenta principal é o .addEventListener(tipoDoEvento, funcaoCallback)
 
+    // Exemplo:
+    // 1. Selecionamos o elemento
+    let botaoEl = document.querySelector("#botao-clique");
 
-// 3. elemento.remove()
-// Remove o elemento da página.
-// Vamos remover o primeiro item de exemplo:
-// let itemExemplo = document.querySelector("#lista-desafio li"); // Pega o primeiro <li>
-// itemExemplo.remove();
+    function clicarBotao() {
+        console.log("você clicou")
+    }
 
+    botaoEl = addEventListener("click", () => {
+        console.log("clicar")
+    })
 
-//desafios
+    // 2. Criamos a função que vai rodar no evento
+    // function quandoClicar() {
+    //   alert("Você clicou!");
+    // }
 
-// 1. Capture o o input (id "campo-nome").
-// 2. Capture a lista (id "lista-desafio").
-//exemplo:
-let botaoDesafio = document.querySelector("#botao-clique");
 
+    // 3. Adicionamos o "ouvinte"
+    // botaoEl.addEventListener("click", quandoClicar);
 
 
-// 3. ADICIONE um novo "addEventListener" de "click" ao botao-clique.
-//    (Não se preocupe, pode ter vários 'listeners' no mesmo botão).
-//    Dentro deste novo 'listener', faça o seguinte:
+    // Também podemos usar uma Arrow Function direto:
+    // botaoEl.addEventListener("click", () => {
+    //   console.log("Clicou de novo!");
+    //   document.querySelector("#titulo-principal").classList.toggle("destaque");
+    // });
 
-botaoDesafio.addEventListener("click", () => {
-    // a. Pegue o texto (value) do input (campo-nome).
-    
 
-    // b. Crie um novo elemento "li" (document.createElement).
-    
+    //desafios
 
-    // c. Defina o .textContent do novo "li" como o texto do input.
-    
-    // d. Adicione (appendChild) o novo "li" à 'listaDesafio'.
+    // Desafio Final (Juntando tudo)
+    // 1. Capture o botão (id "botao-clique") e o input (id "campo-nome").
+    // 2. Capture o título (id "titulo-principal").
+    // 3. Adicione um "addEventListener" de "click" ao *botão*.
+    // 4. Dentro da função do addEventListener:
+    //    a. Pegue o .value do *input*.
+    //    b. Coloque esse valor como o .textContent do *título*.
 
+    // Exemplo: Se o usuário digitar "Carlos" no input e clicar,
+    // o <h1> deve mudar para "Carlos".
 
-    // e. (Desafio Bônus) Limpe o input depois de adicionar.
+    // Escreva seu código aqui:
 
-});
+    let butto = document.querySelector("#botao-clique")
+    let input = document.querySelector('#campo-nome')
+    let titulo = document.querySelector('#titulo-principal')
 
+    function newtestes2(butto2,input,titulo){
+        console.log("----")
+        console.log(butto2)
+        let put = input.value
+        titulo.textContent = put
+    }
+    butto.addEventListener('click',() => newtestes2(butto,input,titulo))
 
-// Desafio 2 (Remoção)
-// 1. Capture o primeiro elemento chamado parágrafo (classe "paragrafo").
-// 2. Adicione um "addEventListener" de "click" a esse *parágrafo*.
-// 3. Quando o parágrafo for clicado, faça ele se auto-remover.
-//    (Dica: dentro do 'listener', você pode usar 'this.remove()'
-//    ou capturar o elemento de novo e dar .remove())
+    //let button = addEventListener("click", () =>{
+    //    let inputs =  input.value 
+//
+    //    titulo.textContent = inputs
+    //})
+ 
+
+    //------------------------------------------------------------
+    // Criando e Removendo Elementos
+    // Podemos criar elementos HTML do zero e adicioná-los à página,
+    // ou remover elementos que já existem.
+
+    // 1. document.createElement(tag)
+    // Cria um novo elemento (em memória, que ainda não está na página).
+
+
+    // let novoItemLista = document.createElement("li");
+
+
+    // 2. elementoPai.appendChild(elementoFilho)
+    // Insere o novo elemento (filho) dentro de um elemento existente (pai).
+    // Primeiro, selecionamos o "pai" (a lista <ul>):
+    // let listaPai = document.querySelector("#lista-desafio");
+
+    // Agora, "anexamos" o novo <li> dentro do <ul>
+    // listaPai.appendChild(novoItemLista);
+
+
+    // 3. elemento.remove()
+    // Remove o elemento da página.
+    // Vamos remover o primeiro item de exemplo:
+    // let itemExemplo = document.querySelector("#lista-desafio li"); // Pega o primeiro <li>
+    // itemExemplo.remove();
+
+
+    //desafios
+
+    // 1. Capture o o input (id "campo-nome").
+    // 2. Capture a lista (id "lista-desafio").
+    //exemplo:
+    //let botaoDesafio = document.querySelector("#botao-clique");
+
+
+
+    // 3. ADICIONE um novo "addEventListener" de "click" ao botao-clique.
+    //    (Não se preocupe, pode ter vários 'listeners' no mesmo botão).
+    //    Dentro deste novo 'listener', faça o seguinte:
+
+    botaoDesafio.addEventListener("click", () => {
+        // a. Pegue o texto (value) do input (campo-nome).
+
+
+        // b. Crie um novo elemento "li" (document.createElement).
+
+
+        // c. Defina o .textContent do novo "li" como o texto do input.
+
+        // d. Adicione (appendChild) o novo "li" à 'listaDesafio'.
+
+
+        // e. (Desafio Bônus) Limpe o input depois de adicionar.
+
+    });
+
+
+    // Desafio 2 (Remoção)
+    // 1. Capture o primeiro elemento chamado parágrafo (classe "paragrafo").
+    // 2. Adicione um "addEventListener" de "click" a esse *parágrafo*.
+    // 3. Quando o parágrafo for clicado, faça ele se auto-remover.
+    //    (Dica: dentro do 'listener', você pode usar 'this.remove()'
+    //    ou capturar o elemento de novo e dar .remove())
 
 
 
 
 
 </script>
+
 </html>
